@@ -1,8 +1,8 @@
-package homepage.service;
+package home.service;
 
 import java.util.List;
 
-import homepage.model.User;
+import home.model.User;
 
 public interface UserService {
 

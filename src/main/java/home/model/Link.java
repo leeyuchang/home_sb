@@ -1,4 +1,4 @@
-package homepage.model;
+package home.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -15,13 +15,13 @@ import lombok.NoArgsConstructor;
 import lombok.ToString;
 
 @Entity
-@Table(name = "item")
+@Table(name = "link")
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 @ToString
 @JsonIgnoreProperties({ "hibernateLazyInitializer", "handler" }) // fix me:This is a problem on hibernate
-public class Item {
+public class Link {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
@@ -31,6 +31,6 @@ public class Item {
 	@Column(name = "title")
 	private String title;
 
-	@Column(name = "link")
-	private String link;
+	@Column(name = "url")
+	private String url;
 }

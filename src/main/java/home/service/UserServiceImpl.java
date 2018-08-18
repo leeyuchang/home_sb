@@ -1,4 +1,4 @@
-package homepage.service;
+package home.service;
 
 import java.util.List;
 
@@ -6,8 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import homepage.model.User;
-import homepage.repository.UserRepository;
+import home.model.User;
+import home.repository.UserRepository;
 
 @Service
 @Transactional

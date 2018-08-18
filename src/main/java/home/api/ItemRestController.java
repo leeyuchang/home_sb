@@ -1,4 +1,4 @@
-package homepage.api;
+package home.api;
 
 import java.util.List;
 
@@ -12,41 +12,41 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
-import homepage.model.Item;
-import homepage.service.ItemService;
+import home.model.Link;
+import home.service.LinkService;
 
 @CrossOrigin(origins = "*", maxAge = 3600)
 @RestController
-@RequestMapping(value = "api/items")
+@RequestMapping(value = "api/link")
 public class ItemRestController {
 
 	@Autowired
-	private ItemService itemService;
+	private LinkService linkService;
 
 	@RequestMapping(method = RequestMethod.GET)
-	List<Item> getItems() {
-		return itemService.findAll();
+	List<Link> getItems() {
+		return linkService.findAll();
 	}
 
 	@RequestMapping(value = "{id}", method = RequestMethod.GET)
-	Item getItem(@PathVariable Integer id) {
-		return itemService.findOne(id);
+	Link getItem(@PathVariable Integer id) {
+		return linkService.findOne(id);
 	}
 
 	@RequestMapping(method = RequestMethod.POST)
 	@ResponseStatus(HttpStatus.CREATED)
-	Item postItem(@RequestBody Item item) {
-		return itemService.create(item);
+	Link postItem(@RequestBody Link link) {
+		return linkService.create(link);
 	}
 
 	@RequestMapping(value = "{id}", method = RequestMethod.PUT)
-	Item putItem(@PathVariable Integer id, @RequestBody Item item) {
-		return itemService.update(item);
+	Link putItem(@PathVariable Integer id, @RequestBody Link link) {
+		return linkService.update(link);
 	}
 
 	@RequestMapping(value = "{id}", method = RequestMethod.DELETE)
 	void delete(@PathVariable Integer id) {
-		itemService.delete(id);
+		linkService.delete(id);
 	}
 
 }

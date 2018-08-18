@@ -1,4 +1,4 @@
-package homepage.api;
+package home.api;
 
 import java.util.List;
 
@@ -12,12 +12,12 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
-import homepage.model.User;
-import homepage.service.UserService;
+import home.model.User;
+import home.service.UserService;
 
 @CrossOrigin(origins = "*", maxAge = 3600)
 @RestController
-@RequestMapping(value = "api/users")
+@RequestMapping(value = "api/user")
 public class UserRestController {
 
 	@Autowired

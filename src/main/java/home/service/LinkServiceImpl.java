@@ -1,4 +1,4 @@
-package homepage.service;
+package home.service;
 
 import java.util.List;
 
@@ -7,34 +7,34 @@ import org.springframework.stereotype.Repository;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import homepage.model.Item;
-import homepage.repository.ItemRepository;
+import home.model.Link;
+import home.repository.LinkRepository;
 
 @Service
 @Transactional
-public class ItemServiceImpl implements ItemService {
+public class LinkServiceImpl implements LinkService {
 
 	@Autowired
-	ItemRepository repository;
+	LinkRepository repository;
 
 	@Override
-	public List<Item> findAll() {
+	public List<Link> findAll() {
 		return repository.findAll();
 	}
 
 	@Override
-	public Item findOne(Integer id) {
+	public Link findOne(Integer id) {
 		return repository.getOne(id);
 	}
 
 	@Override
-	public Item create(Item item) {
-		return repository.save(item);
+	public Link create(Link link) {
+		return repository.save(link);
 	}
 
 	@Override
-	public Item update(Item item) {
-		return repository.save(item);
+	public Link update(Link link) {
+		return repository.save(link);
 	}
 
 	@Override
