@@ -10,6 +10,6 @@ public interface UserService {
 	public User findOne(String id);
 	public User create(User user);
 	public User update(User user);
-	public void delete(String id);
+	public User delete(String id);
 
 }

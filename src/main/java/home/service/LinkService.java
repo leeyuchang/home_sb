@@ -10,6 +10,6 @@ public interface LinkService {
 	public Link findOne(Integer id);
 	public Link create(Link link);
 	public Link update(Link link);
-	public void delete(Integer id);
+	public Link delete(Integer id);
 	
 }

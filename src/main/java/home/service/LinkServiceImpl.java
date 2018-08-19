@@ -3,12 +3,15 @@ package home.service;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Repository;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import home.model.Link;
 import home.repository.LinkRepository;
+
+/*
+ * TODO : updateLinkに戻り値がある理由を確認する。
+ */
 
 @Service
 @Transactional
@@ -38,8 +41,12 @@ public class LinkServiceImpl implements LinkService {
 	}
 
 	@Override
-	public void delete(Integer id) {
-		repository.deleteById(id);
+	public Link delete(Integer id) {
+		Link link = repository.getOne(id);
+		if (link != null) {
+			repository.deleteById(id);
+		}
+		return link;
 	}
 
 }
